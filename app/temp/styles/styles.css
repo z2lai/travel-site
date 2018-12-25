@@ -667,8 +667,28 @@ a {
     }
 
 @media (min-width: 800px) {
-        .row--gutters > :not(:last-child) {
+
+.row {
+        /* Column Layout Design Pattern:
+        1) Float column divs left and specify column widths in percentages
+        2) Specify padding-right for all columns
+        3) Specify negative margin-right for container to be equal padding-right, columns widths will expand to the right accordingly to fill the negative margin up until the right edge of the container. This effectively centres the content within the container. */
+}
+
+        .row--gutters > div {
             padding-right: 65px;
+        }
+
+        .row--gutters {
+            margin-right: -65px;
+        }
+
+        .row--gutters-large > div {
+            padding-right: 100px;
+        }
+
+        .row--gutters-large {
+            margin-right: -100px;
         }
 
         .row__medium-4 {
@@ -679,7 +699,12 @@ a {
         .row__medium-4--larger {
             width: 37%;
         }
-    
+        
+        .row__medium-6 {
+            float: left;
+            width: 50%;
+        }
+
         .row__medium-8 {
             float: left;
             width: 66.66%;
@@ -708,4 +733,18 @@ a {
 
 .generic-content-container p a {
         font-weight: 700;
+    }
+
+.section-title {
+    font-size: 3.75rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+.section-title strong {
+        font-weight: 500;
+    }
+
+.section-title__icon {
+        margin-right: 1.5rem;
     }

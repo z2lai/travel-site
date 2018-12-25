@@ -7,8 +7,25 @@
     }
 
     @mixin atMedium {
-        &--gutters > :not(:last-child) {
+        /* Column Layout Design Pattern:
+        1) Float column divs left and specify column widths in percentages
+        2) Specify padding-right for all columns
+        3) Specify negative margin-right for container to be equal padding-right, columns widths will expand to the right accordingly to fill the negative margin up until the right edge of the container. This effectively centres the content within the container. */
+
+        &--gutters > div {
             padding-right: 65px;
+        }
+
+        &--gutters {
+            margin-right: -65px;
+        }
+
+        &--gutters-large > div {
+            padding-right: 100px;
+        }
+
+        &--gutters-large {
+            margin-right: -100px;
         }
 
         &__medium-4 {
@@ -19,7 +36,12 @@
         &__medium-4--larger {
             width: 37%;
         }
-    
+        
+        &__medium-6 {
+            float: left;
+            width: 50%;
+        }
+
         &__medium-8 {
             float: left;
             width: 66.66%;
