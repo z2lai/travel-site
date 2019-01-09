@@ -584,6 +584,19 @@ a {
     }
     }
 
+.wrapper--no-padding-until-medium {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+@media (min-width: 800px) {
+
+.wrapper--no-padding-until-medium {
+            padding-left: 18px;
+            padding-right: 18px
+    }
+    }
+
 .page-section {
     padding: 1.2rem 0;
 }
@@ -598,6 +611,18 @@ a {
 .page-section--blue {
         color: #FFF;
         background: #2f5572;
+    }
+
+.page-section--testimonials {
+        background-color: #e0e6ef;
+    }
+
+@media (min-width: 800px) {
+
+.page-section--testimonials {
+            background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+            background-size: cover
+    }
     }
 
 .headline {
@@ -656,14 +681,16 @@ a {
         margin-top: 0px;
     }
 
-.row::after {
-        content: "";
-        clear: both;
-        display: block;
+.row--t-padding {
+        padding-top: 80px;
     }
 
 .row__b-margin-until-medium {
         margin-bottom: 1rem;
+    }
+
+.row__b-margin-large-until-medium {
+        margin-bottom: 80px;
     }
 
 @media (min-width: 800px) {
@@ -674,6 +701,12 @@ a {
         2) Specify padding-right for all columns
         3) Specify negative margin-right for container to be equal padding-right, columns widths will expand to the right accordingly to fill the negative margin up until the right edge of the container. This effectively centres the content within the container. */
 }
+
+        .row::after {
+        content: "";
+        clear: both;
+        display: block;
+    }
 
         .row--gutters > div {
             padding-right: 65px;
@@ -690,6 +723,20 @@ a {
         .row--gutters-large {
             margin-right: -100px;
         }
+
+        .row--gutters-small > div {
+            padding-right: 45px;
+        }
+
+        .row--gutters-small {
+            margin-right: -45px;
+        }
+        
+        .row--flexbox {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }        
 
         .row__medium-4 {
             float: left;
@@ -716,6 +763,12 @@ a {
 
         .row__b-margin-until-medium {
             margin-bottom: 0rem;
+        }
+
+        .row__medium-4--flex-item {
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
         }
     }
 
@@ -749,6 +802,10 @@ a {
         font-size: 3.75rem; 
         margin-bottom: 3.125rem
 }
+    }
+
+.section-title--blue {
+        color: #2f5572;
     }
 
 .section-title strong {
@@ -810,4 +867,58 @@ a {
             text-align: left;
             margin-top: 1em
     }
+    }
+
+.testimonial {
+    position: relative;
+    height: 100%;
+    padding: 80px 18px 1px 18px;
+    background-color: #e0e6ef;
+}
+
+@media (min-width: 800px) {
+
+.testimonial {
+        padding: 80px 1.8125rem 1px 1.8125rem;
+        background-color: rgba(255, 255, 255, .8)
+}
+    }
+
+.testimonial--b-margin-until-medium {
+        margin-bottom: 80px;
+    }
+
+@media (min-width: 800px) {
+
+.testimonial--b-margin-until-medium {
+            margin-bottom: 0px
+    }
+    }
+
+.testimonial__profile-picture {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translate(-50%, -100%);
+                transform: translate(-50%, -100%);
+        width: 160px;
+        height: 160px;
+        border-radius: 80px;
+        overflow: hidden;
+        border: 6px solid rgba(255, 255, 255, .8);
+    }
+
+.testimonial__title {
+        text-align: center;
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #2f5572;
+    }
+
+.testimonial__subtitle {
+        text-align: center;
+        margin: .25rem 0 1rem 0;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        color: #d59541;
     }

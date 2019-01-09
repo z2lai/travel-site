@@ -1,0 +1,44 @@
+.testimonial {
+    position: relative;
+    height: 100%;
+    padding: 80px 18px 1px 18px;
+    background-color: $lightBlue;
+    @mixin atMedium {
+        padding: 80px 1.8125rem 1px 1.8125rem;
+        background-color: rgba(255, 255, 255, .8);
+    }
+
+    &--b-margin-until-medium {
+        margin-bottom: 80px;
+        @mixin atMedium {
+            margin-bottom: 0px;
+        }
+    }
+
+    &__profile-picture {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        width: 160px;
+        height: 160px;
+        border-radius: 80px;
+        overflow: hidden;
+        border: 6px solid rgba(255, 255, 255, .8);
+    }
+
+    &__title {
+        text-align: center;
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $mainBlue;
+    }
+
+    &__subtitle {
+        text-align: center;
+        margin: .25rem 0 1rem 0;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        color: $mainOrange;
+    }
+}
