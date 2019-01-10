@@ -922,3 +922,24 @@ a {
         font-weight: 400;
         color: #d59541;
     }
+
+.site-footer {
+    background-color: #2f5572;
+    color: #FFF;
+    padding: .5rem 0;
+    text-align: center;
+}
+
+.site-footer__text {
+        display: block;
+        margin-bottom: 1rem;
+        font-weight: 200;
+    }
+
+@media (min-width: 800px) {
+
+.site-footer__text {
+            display: inline;
+            margin: 0 1.4rem 0 0
+    }
+    }
