@@ -12,11 +12,11 @@
         top: 50%;
         left: 0;
         width: 100%;
-        padding-top: 3.75rem; 
+        padding-top: 90px; 
         text-align: center;
         transform: translateY(-50%);
         @mixin atMedium {
-            padding-top: 3.75rem;            
+            padding-top: 60px;            
         }
     }
 
