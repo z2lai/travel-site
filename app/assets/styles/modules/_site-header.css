@@ -33,6 +33,10 @@
         }
     }
 
+    &__menu-content--is-visible {
+        display: block;
+    }
+
     &__menu-icon {
         position: absolute;
         top: 10px;

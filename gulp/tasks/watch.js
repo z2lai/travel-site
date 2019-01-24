@@ -22,9 +22,13 @@ gulp.task('watch', function() {
       browserSync.reload();
     });
   
-    gulp.watch('./app/assets/styles/**/*.css', function() {        
+    gulp.watch('./app/assets/styles/**/*.css', function() {       
       gulp.start('cssInject');
     });
+
+    gulp.watch('./app/assets/scripts/**/*.js', function() {
+      gulp.start('scriptsRefresh')
+    })
   });
   
   /* Create task to inject CSS into the webpage without resetting state of the browser. 'styles' is 
@@ -32,4 +36,9 @@ gulp.task('watch', function() {
   gulp.task('cssInject', ['styles'], function() {
     return gulp.src('./app/temp/styles/styles.css')
       .pipe(browserSync.stream());
+  });
+
+  /* Create a task that refreshes the browser after the scripts task is finished running webpack*/
+  gulp.task('scriptsRefresh', ['scripts'], function() {
+    browserSync.reload();
   });
