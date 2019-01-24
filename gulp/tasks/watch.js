@@ -18,15 +18,15 @@ gulp.task('watch', function() {
       }
     });
   
-    gulp.watch('./app/index.html', function() {
+    gulp.watch('app/index.html', function() {
       browserSync.reload();
     });
   
-    gulp.watch('./app/assets/styles/**/*.css', function() {       
+    gulp.watch('app/assets/styles/**/*.css', function() {       
       gulp.start('cssInject');
     });
 
-    gulp.watch('./app/assets/scripts/**/*.js', function() {
+    gulp.watch('app/assets/scripts/**/*.js', function() {
       gulp.start('scriptsRefresh')
     })
   });
@@ -34,7 +34,7 @@ gulp.task('watch', function() {
   /* Create task to inject CSS into the webpage without resetting state of the browser. 'styles' is 
   passed as the dependency task which means it has to be completed before 'cssInject' is started */
   gulp.task('cssInject', ['styles'], function() {
-    return gulp.src('./app/temp/styles/styles.css')
+    return gulp.src('app/temp/styles/styles.css')
       .pipe(browserSync.stream());
   });
 

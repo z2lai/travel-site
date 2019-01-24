@@ -9,11 +9,11 @@ hexrgba = require('postcss-hexrgba');
 
 
 gulp.task('styles', function() {
-    return gulp.src('./app/assets/styles/styles.css') // specifiy source file
+    return gulp.src('app/assets/styles/styles.css') // specifiy source file
       .pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer])) // run postcss filters 
       .on('error', function(errorInfo) {
           console.log(errorInfo.toString());
           this.emit('end');
       })
-      .pipe(gulp.dest('./app/temp/styles')); // specify destination file
+      .pipe(gulp.dest('app/temp/styles')); // specify destination file
   });
