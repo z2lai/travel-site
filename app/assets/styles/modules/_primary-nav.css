@@ -1,7 +1,12 @@
 .primary-nav {
-    margin-right: 1.5rem;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    @mixin atMedium {
+        margin-right: 1.5rem;
+        padding: 0;
+    }
 
     ul {
         display: flex;
@@ -12,13 +17,21 @@
 
     li {
         list-style-type: none;
-        padding: 0 1rem;
+        margin: 0 0.5rem;        
+        @mixin atMedium {
+            margin: 0 1rem;        
+        }
     }
 
     a {
-        font-weight: 300;
+        font-weight: 500;
         color: #FFF;
         text-decoration: none;
+        font-size: 0.9rem;
+        @mixin atMedium {        
+            font-size: 1rem;
+            font-weight: 300;
+        }
     }
 
 }
