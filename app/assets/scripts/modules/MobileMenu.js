@@ -12,7 +12,7 @@ class MobileMenu {
 
     events() {     
         // 2) Adding event handlers to elements
-        this.menuIcon.click(this.toggleMenu.bind(this));
+        this.menuIcon.on('click', this.toggleMenu.bind(this));
     }
 
     toggleMenu() {
